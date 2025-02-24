@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drh3s4hhr4q6y"
-path="res://.godot/imported/screenStates.png-b563afebe176f3a8f209a595f5d24166.ctex"
+uid="uid://bcdkrolnwu0c3"
+path="res://.godot/imported/knifeBasic.png-f09a56b7f869bd71d33f41e07e4da44a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/screenStates.png"
-dest_files=["res://.godot/imported/screenStates.png-b563afebe176f3a8f209a595f5d24166.ctex"]
+source_file="res://Assets/Sprites/knifeBasic.png"
+dest_files=["res://.godot/imported/knifeBasic.png-f09a56b7f869bd71d33f41e07e4da44a.ctex"]
 
 [params]
 

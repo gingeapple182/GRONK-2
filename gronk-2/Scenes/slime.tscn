@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://brxbixbi0o0b3"]
+
+[ext_resource type="Script" path="res://scripts/slime.gd" id="1_450qd"]
+[ext_resource type="Texture2D" uid="uid://cgy2w81kw046m" path="res://assets/sprites/slime_green.png" id="1_dhy6d"]
+[ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/killzone.tscn" id="2_frkeh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4tsq"]
+atlas = ExtResource("1_dhy6d")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrj4l"]
+atlas = ExtResource("1_dhy6d")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ctq"]
+atlas = ExtResource("1_dhy6d")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiybg"]
+atlas = ExtResource("1_dhy6d")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6fl4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4tsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrj4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ctq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiybg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inomo"]
+size = Vector2(10, 15)
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_450qd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6fl4j")
+autoplay = "default"
+frame_progress = 0.706141
+
+[node name="Killzone" parent="." instance=ExtResource("2_frkeh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_inomo")

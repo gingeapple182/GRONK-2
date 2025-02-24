@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46icky117oe7"
-path="res://.godot/imported/playerJacketSheet.png-3e76515f4eaab79c9b6807e560806477.ctex"
+uid="uid://cgy2w81kw046m"
+path="res://.godot/imported/slime_green.png-742331d8a736d5c2ff3aa448ac3a7524.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/playerJacketSheet.png"
-dest_files=["res://.godot/imported/playerJacketSheet.png-3e76515f4eaab79c9b6807e560806477.ctex"]
+source_file="res://Assets/Sprites/slime_green.png"
+dest_files=["res://.godot/imported/slime_green.png-742331d8a736d5c2ff3aa448ac3a7524.ctex"]
 
 [params]
 
