@@ -44,6 +44,7 @@ animations = [{
 size = Vector2(10, 15)
 
 [node name="SlimePurple" type="Node2D"]
+z_index = 2
 script = ExtResource("1_exeuc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
