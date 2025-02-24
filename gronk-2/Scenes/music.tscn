@@ -5,4 +5,5 @@
 [node name="Music" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_8q2e7")
 autoplay = true
+stream_paused = true
 bus = &"Music"
