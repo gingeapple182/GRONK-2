@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtwisp2xewee1"
-path="res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex"
+uid="uid://crokpsgg70v"
+path="res://.godot/imported/tilemap_packed.png-c9ff563d1c67d7a4d01f4b2c49b22989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/fruit.png"
-dest_files=["res://.godot/imported/fruit.png-3735163b668af10c2b35b52cba81b68a.ctex"]
+source_file="res://assets/sprites/pixel_platformer/base/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-c9ff563d1c67d7a4d01f4b2c49b22989.ctex"]
 
 [params]
 

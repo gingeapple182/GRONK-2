@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uv4ol6jgljb5"
-path="res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex"
+uid="uid://cmfdlvua4ghqu"
+path="res://.godot/imported/tilemap_packed.png-713f814891978cab91e7185d13166d3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/knight.png"
-dest_files=["res://.godot/imported/knight.png-7c67c83d34932624952797d9e971a644.ctex"]
+source_file="res://assets/sprites/pixel_platformer/farm/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-713f814891978cab91e7185d13166d3d.ctex"]
 
 [params]
 
