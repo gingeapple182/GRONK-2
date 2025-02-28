@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://d228bmwmj0uqa"]
+[gd_scene load_steps=15 format=4 uid="uid://dirgipwa365gw"]
 
 [ext_resource type="PackedScene" uid="uid://0luqwl32q1mv" path="res://scenes/player.tscn" id="1_4mxse"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ed44n"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_4c4i4"]
-[ext_resource type="Texture2D" uid="uid://djgxt68pyufht" path="res://assets/sprites/world_tileset.png" id="2_5aedn"]
+[ext_resource type="Texture2D" uid="uid://djgxt68pyufht" path="res://assets/sprites/brackeys/world_tileset.png" id="2_5aedn"]
 [ext_resource type="PackedScene" uid="uid://dpjewfdqf20y2" path="res://scenes/grass_platform_small.tscn" id="3_1c7t7"]
 [ext_resource type="PackedScene" uid="uid://cxl68ms0omj40" path="res://scenes/coin.tscn" id="5_sjor8"]
 [ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/killzone.tscn" id="6_8gsx4"]
@@ -12,7 +12,7 @@
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="10_08rhg"]
 [ext_resource type="PackedScene" uid="uid://472c3ey6lcg6" path="res://scenes/end_sign.tscn" id="13_jcrfm"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovlgd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbux2"]
 texture = ExtResource("2_5aedn")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -175,11 +175,11 @@ texture = ExtResource("2_5aedn")
 
 [sub_resource type="TileSet" id="TileSet_3nc86"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ovlgd")
+sources/0 = SubResource("TileSetAtlasSource_jbux2")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_of56l"]
 
-[node name="LevelOne" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

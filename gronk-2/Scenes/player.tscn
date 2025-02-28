@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://0luqwl32q1mv"]
 
-[ext_resource type="Texture2D" uid="uid://uv4ol6jgljb5" path="res://assets/sprites/knight.png" id="1_fvshb"]
+[ext_resource type="Texture2D" uid="uid://uv4ol6jgljb5" path="res://assets/sprites/brackeys/knight.png" id="1_fvshb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oy1gx"]
 [ext_resource type="AudioStream" uid="uid://blt115htm3sly" path="res://assets/sounds/jump.wav" id="3_03oqu"]
 

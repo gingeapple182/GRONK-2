@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0smm2e8baemg"]
+
+[ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_xulca"]
+[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="2_i4k8t"]
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_u3esi"]
+[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="4_v4t87"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xulca")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -35.0
+offset_right = 1181.0
+offset_bottom = 670.0
+texture = ExtResource("2_i4k8t")
+stretch_mode = 2
+
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -374.0
+offset_top = 100.0
+offset_right = 374.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_u3esi")
+theme_override_font_sizes/font_size = 32
+text = "GRONK 2: Electric Boogaloo"
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = 188.0
+offset_right = 71.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_v4t87")
+theme_override_font_sizes/font_size = 16
+text = "Start Game"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
