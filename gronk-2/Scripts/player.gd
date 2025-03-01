@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var game_manager: Node = %GameManager
+@onready var level_manager: Node = %LevelManager
 @onready var score_label: Label = $CanvasLayer/ScoreLabel
 @onready var jump: AudioStreamPlayer2D = $Jump
 
@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	score_tracker()
 
 func score_tracker():
-	score_label.text = str(game_manager.score)
+	score_label.text = str(level_manager.score)
 	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

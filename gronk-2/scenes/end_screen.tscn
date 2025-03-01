@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmt3d2brx0pt7"]
+
+[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="1_ok2nf"]
+[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_xqqx3"]
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5v5b5"]
+[ext_resource type="Shader" path="res://assets/shader/background_shader.gdshader" id="2_275lc"]
+[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="3_2cwu2"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="4_7oeu2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7g8w"]
+shader = ExtResource("2_275lc")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xqqx3")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_u7g8w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -40.0
+offset_right = -149.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_ok2nf")
+expand_mode = 3
+stretch_mode = 6
+script = ExtResource("4_7oeu2")
+
+[node name="WinLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 100.0
+offset_right = 240.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5v5b5")
+theme_override_font_sizes/font_size = 32
+text = "Congratulations!"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = 200.0
+offset_right = 111.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_2cwu2")
+theme_override_font_sizes/font_size = 16
+text = "Coins collected: 0"
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 76.0
+offset_right = 100.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2cwu2")
+text = "Play again"
+
+[node name="StartMenuButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 176.0
+offset_right = 100.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_2cwu2")
+text = "Back to Start"
+
+[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="StartMenuButton" to="." method="_on_start_menu_button_pressed"]
