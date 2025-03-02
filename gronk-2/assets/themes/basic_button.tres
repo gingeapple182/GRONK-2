@@ -1,43 +1,52 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cnnrcqluok6ds"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cnnrcqluok6ds"]
 
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="1_3pp3o"]
-[ext_resource type="Texture2D" uid="uid://drthppo44b1x5" path="res://assets/sprites/ginge/GingeButton.png" id="2_a7rcn"]
+[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="2_iswux"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpted"]
+texture = ExtResource("2_iswux")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 48, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ellab"]
-texture = ExtResource("2_a7rcn")
+texture = ExtResource("2_iswux")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
-region_rect = Rect2(0, 24, 96, 24)
+region_rect = Rect2(24, 0, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yqa80"]
-texture = ExtResource("2_a7rcn")
+texture = ExtResource("2_iswux")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
-region_rect = Rect2(0, 48, 96, 24)
+region_rect = Rect2(48, 0, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vubf8"]
-texture = ExtResource("2_a7rcn")
+texture = ExtResource("2_iswux")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
-region_rect = Rect2(0, 0, 96, 24)
+region_rect = Rect2(0, 0, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5wo7"]
-texture = ExtResource("2_a7rcn")
+texture = ExtResource("2_iswux")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
-region_rect = Rect2(0, 48, 96, 24)
+region_rect = Rect2(48, 0, 24, 24)
 
 [resource]
 default_font = ExtResource("1_3pp3o")
 Button/fonts/font = ExtResource("1_3pp3o")
+Button/styles/disabled = SubResource("StyleBoxTexture_bpted")
 Button/styles/hover = SubResource("StyleBoxTexture_ellab")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_yqa80")
 Button/styles/normal = SubResource("StyleBoxTexture_vubf8")

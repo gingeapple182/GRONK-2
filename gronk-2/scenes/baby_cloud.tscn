@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb6kvuh61u6mp"]
+
+[ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="1_uhm0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bkvo"]
+size = Vector2(18, 9)
+
+[node name="BabyCloud" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uhm0x")
+region_enabled = true
+region_rect = Rect2(288, 126, 18, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8bkvo")
+one_way_collision = true

@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/background.gd" id="3_31djg"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_u3esi"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="4_v4t87"]
-[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/button_theme.tres" id="6_6idb4"]
+[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="6_6idb4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wawdg"]
 shader = ExtResource("2_3c7yw")

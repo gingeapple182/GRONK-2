@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcx6pldr2kyje"]
+
+[ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="1_4wahh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8bkvo"]
+size = Vector2(18, 13.8125)
+
+[node name="BigCloudLeft" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9, -7)
+texture = ExtResource("1_4wahh")
+centered = false
+region_enabled = true
+region_rect = Rect2(234, 126, 18, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8bkvo")
+one_way_collision = true
