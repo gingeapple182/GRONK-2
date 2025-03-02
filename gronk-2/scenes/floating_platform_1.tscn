@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpjewfdqf20y2"]
 
-[ext_resource type="Texture2D" uid="uid://texrs6p482bk" path="res://assets/sprites/brackeys/platforms.png" id="1_4gs4m"]
+[ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="1_ph1jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqoip"]
-size = Vector2(16, 8)
+size = Vector2(18, 10)
 
 [node name="GrassPlatformSmall" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_4gs4m")
+texture = ExtResource("1_ph1jn")
 region_enabled = true
-region_rect = Rect2(0, 0, 16, 9)
+region_rect = Rect2(126, 126, 18, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tqoip")
