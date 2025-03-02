@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmt3d2brx0pt7"]
+[gd_scene load_steps=9 format=3 uid="uid://bmt3d2brx0pt7"]
 
 [ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="1_ok2nf"]
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_xqqx3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://assets/shader/background_shader.gdshader" id="2_275lc"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="3_2cwu2"]
 [ext_resource type="Script" path="res://scripts/background.gd" id="4_7oeu2"]
+[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/button_theme.tres" id="7_527j7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u7g8w"]
 shader = ExtResource("2_275lc")
@@ -80,7 +81,9 @@ offset_right = 100.0
 offset_bottom = 126.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("7_527j7")
 theme_override_fonts/font = ExtResource("3_2cwu2")
+theme_override_font_sizes/font_size = 16
 text = "Play again"
 
 [node name="StartMenuButton" type="Button" parent="."]
@@ -96,6 +99,7 @@ offset_right = 100.0
 offset_bottom = 226.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("7_527j7")
 theme_override_fonts/font = ExtResource("3_2cwu2")
 text = "Back to Start"
 

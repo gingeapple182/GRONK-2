@@ -1,16 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4tx8h116njy0"]
 
-[ext_resource type="Texture2D" uid="uid://texrs6p482bk" path="res://assets/sprites/brackeys/platforms.png" id="1_c0rv3"]
+[ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="1_r24ul"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mex7"]
-size = Vector2(32, 8)
+size = Vector2(18, 6)
 
 [node name="IcePlatform" type="AnimatableBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_c0rv3")
+texture = ExtResource("1_r24ul")
 region_enabled = true
-region_rect = Rect2(16, 48, 32, 9)
+region_rect = Rect2(342, 91, 18, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0mex7")
