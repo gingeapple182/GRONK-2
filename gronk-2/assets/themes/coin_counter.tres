@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dd0iwrgqetwer"]
+
+[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="1_xogpg"]
+[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="2_nqmgg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7n1j3"]
+texture = ExtResource("2_nqmgg")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(24, 48, 24, 24)
+
+[resource]
+Label/fonts/font = ExtResource("1_xogpg")
+Label/styles/normal = SubResource("StyleBoxTexture_7n1j3")
