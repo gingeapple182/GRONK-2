@@ -1,17 +1,67 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmt3d2brx0pt7"]
+[gd_scene load_steps=16 format=3 uid="uid://bmt3d2brx0pt7"]
 
 [ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="1_ok2nf"]
 [ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_xqqx3"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5v5b5"]
-[ext_resource type="Shader" path="res://assets/shader/background_shader.gdshader" id="2_275lc"]
+[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_g0py2"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="3_2cwu2"]
-[ext_resource type="Script" path="res://scripts/background.gd" id="4_7oeu2"]
+[ext_resource type="Script" path="res://scenes/panel.gd" id="4_1apuy"]
 [ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="7_527j7"]
+[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="8_1wsck"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7g8w"]
-shader = ExtResource("2_275lc")
-shader_parameter/scroll_speed = 0.1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sos85"]
+shader = ExtResource("2_g0py2")
 shader_parameter/offset = Vector2(0, 0)
+shader_parameter/scroll_texture = ExtResource("1_ok2nf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsmpj"]
+texture = ExtResource("8_1wsck")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 48, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxygo"]
+texture = ExtResource("8_1wsck")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(24, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0a6"]
+texture = ExtResource("8_1wsck")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(48, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktpd0"]
+texture = ExtResource("8_1wsck")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xspj"]
+texture = ExtResource("8_1wsck")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(48, 24, 24, 24)
+
+[sub_resource type="Theme" id="Theme_ejf1h"]
+default_font = ExtResource("3_2cwu2")
+Button/fonts/font = ExtResource("3_2cwu2")
+Button/styles/disabled = SubResource("StyleBoxTexture_bsmpj")
+Button/styles/hover = SubResource("StyleBoxTexture_dxygo")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_ia0a6")
+Button/styles/normal = SubResource("StyleBoxTexture_ktpd0")
+Button/styles/pressed = SubResource("StyleBoxTexture_4xspj")
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -22,23 +72,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xqqx3")
 
-[node name="Background" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_u7g8w")
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_sos85")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -34.0
-offset_top = -40.0
-offset_right = -149.0
-offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_ok2nf")
-expand_mode = 3
-stretch_mode = 6
-script = ExtResource("4_7oeu2")
+script = ExtResource("4_1apuy")
 
 [node name="WinLabel" type="Label" parent="."]
 layout_mode = 1
@@ -68,40 +110,45 @@ theme_override_fonts/font = ExtResource("3_2cwu2")
 theme_override_font_sizes/font_size = 16
 text = "Coins collected: 0"
 
-[node name="ReplayButton" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 76.0
-offset_right = 100.0
-offset_bottom = 126.0
+offset_left = -122.0
+offset_top = 79.0
+offset_right = 123.0
+offset_bottom = 233.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="ButtonReplay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("7_527j7")
 theme_override_fonts/font = ExtResource("3_2cwu2")
 theme_override_font_sizes/font_size = 16
 text = "Play again"
 
-[node name="StartMenuButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 176.0
-offset_right = 100.0
-offset_bottom = 226.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ButtonMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("7_527j7")
 theme_override_fonts/font = ExtResource("3_2cwu2")
 text = "Back to Start"
 
-[connection signal="pressed" from="ReplayButton" to="." method="_on_replay_button_pressed"]
-[connection signal="pressed" from="StartMenuButton" to="." method="_on_start_menu_button_pressed"]
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ejf1h")
+theme_override_fonts/font = ExtResource("3_2cwu2")
+text = "Exit Game
+"
+
+[connection signal="pressed" from="VBoxContainer/ButtonReplay" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonMenu" to="." method="_on_start_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_start_menu_button_pressed"]

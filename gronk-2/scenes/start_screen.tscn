@@ -1,19 +1,69 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcqibluajqe5t"]
+[gd_scene load_steps=16 format=3 uid="uid://dcqibluajqe5t"]
 
 [ext_resource type="Script" path="res://scripts/start_screen.gd" id="1_xulca"]
-[ext_resource type="Shader" path="res://assets/shader/background_shader.gdshader" id="2_3c7yw"]
 [ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="2_i4k8t"]
-[ext_resource type="Script" path="res://scripts/background.gd" id="3_31djg"]
+[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_jragk"]
+[ext_resource type="Script" path="res://scenes/panel.gd" id="3_c7xes"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_u3esi"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="4_v4t87"]
 [ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="6_6idb4"]
+[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="8_tnqgm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wawdg"]
-shader = ExtResource("2_3c7yw")
-shader_parameter/scroll_speed = 0.1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27hve"]
+shader = ExtResource("2_jragk")
 shader_parameter/offset = Vector2(0, 0)
+shader_parameter/scroll_texture = ExtResource("2_i4k8t")
 
-[node name="StartScreen" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bpted"]
+texture = ExtResource("8_tnqgm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 48, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nk0tt"]
+texture = ExtResource("8_tnqgm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(24, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xj6wk"]
+texture = ExtResource("8_tnqgm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(48, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fq004"]
+texture = ExtResource("8_tnqgm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 24, 24, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5gtp"]
+texture = ExtResource("8_tnqgm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(48, 24, 24, 24)
+
+[sub_resource type="Theme" id="Theme_ccp5a"]
+default_font = ExtResource("4_v4t87")
+Button/fonts/font = ExtResource("4_v4t87")
+Button/styles/disabled = SubResource("StyleBoxTexture_bpted")
+Button/styles/hover = SubResource("StyleBoxTexture_nk0tt")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_xj6wk")
+Button/styles/normal = SubResource("StyleBoxTexture_fq004")
+Button/styles/pressed = SubResource("StyleBoxTexture_a5gtp")
+
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,23 +72,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xulca")
 
-[node name="Background" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_wawdg")
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_27hve")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -34.0
-offset_top = -40.0
-offset_right = -149.0
-offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_i4k8t")
-expand_mode = 3
-stretch_mode = 6
-script = ExtResource("3_31djg")
+script = ExtResource("3_c7xes")
 
 [node name="TitleLabel" type="Label" parent="."]
 custom_minimum_size = Vector2(100, 0)
@@ -55,22 +97,48 @@ theme_override_fonts/font = ExtResource("3_u3esi")
 theme_override_font_sizes/font_size = 32
 text = "GRONK 2: Electric Boogaloo"
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = 75.0
-offset_right = 100.0
-offset_bottom = 125.0
+offset_left = -122.0
+offset_top = 79.0
+offset_right = 123.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="ButtonStart" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("6_6idb4")
 theme_override_fonts/font = ExtResource("4_v4t87")
 theme_override_font_sizes/font_size = 16
 text = "Start Game"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[node name="ButtonOptions" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("6_6idb4")
+theme_override_fonts/font = ExtResource("4_v4t87")
+theme_override_font_sizes/font_size = 16
+disabled = true
+text = "Options"
+
+[node name="ButtonExit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ccp5a")
+theme_override_fonts/font = ExtResource("4_v4t87")
+theme_override_font_sizes/font_size = 16
+text = "Exit "
+
+[connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_play_button_pressed"]
