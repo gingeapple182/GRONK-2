@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=4 uid="uid://ce3qkp3sdqij"]
 
-[ext_resource type="Script" path="res://scripts/level_one_manager.gd" id="1_dkqfv"]
+[ext_resource type="Script" path="res://scripts/level_intro_manager.gd" id="1_rlxhh"]
 [ext_resource type="PackedScene" uid="uid://0luqwl32q1mv" path="res://scenes/player.tscn" id="2_kwbcd"]
 [ext_resource type="Theme" uid="uid://dd0iwrgqetwer" path="res://assets/themes/coin_counter.tres" id="3_mvf2r"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_kv080"]
@@ -512,7 +512,7 @@ size = Vector2(428, 67)
 
 [node name="LevelManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_dkqfv")
+script = ExtResource("1_rlxhh")
 
 [node name="ScoreLabel" type="Label" parent="LevelManager"]
 offset_right = 40.0
