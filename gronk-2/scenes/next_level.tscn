@@ -1,22 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvyfj784mw70k"]
+[gd_scene load_steps=7 format=3 uid="uid://cvyfj784mw70k"]
 
 [ext_resource type="Script" path="res://scripts/next_level.gd" id="1_fqn7h"]
-[ext_resource type="Texture2D" uid="uid://djgxt68pyufht" path="res://assets/sprites/brackeys/world_tileset.png" id="2_wt2bu"]
+[ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="2_5t0ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h77md"]
-size = Vector2(14, 14)
+size = Vector2(6, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8aj33"]
+atlas = ExtResource("2_5t0ex")
+region = Rect2(198, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmhor"]
+atlas = ExtResource("2_5t0ex")
+region = Rect2(216, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flco3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aj33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmhor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="NextLevel" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_fqn7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_h77md")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_wt2bu")
+position = Vector2(0, 9)
+texture = ExtResource("2_5t0ex")
 region_enabled = true
-region_rect = Rect2(128, 48, 16, 16)
+region_rect = Rect2(198, 108, 18, 18)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_flco3")
+autoplay = "default"
+frame_progress = 0.526192
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
