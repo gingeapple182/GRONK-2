@@ -130,16 +130,16 @@ layout_mode = 2
 size_flags_horizontal = 10
 value = 100.0
 
-[node name="MuteUnfocused" type="HBoxContainer" parent="Panel/VBoxContainer"]
+[node name="MuteUnfocussed" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="MuteUnfocusedLabel" type="Label" parent="Panel/VBoxContainer/MuteUnfocused"]
+[node name="MuteUnfocussedLabel" type="Label" parent="Panel/VBoxContainer/MuteUnfocussed"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_h0quh")
 theme_override_font_sizes/font_size = 16
-text = "Mute when unfocused"
+text = "Mute when unfocussed"
 
-[node name="MuteFocusCheckBox" type="CheckBox" parent="Panel/VBoxContainer/MuteUnfocused"]
+[node name="MuteFocusCheckBox" type="CheckBox" parent="Panel/VBoxContainer/MuteUnfocussed"]
 layout_mode = 2
 size_flags_horizontal = 10
 
@@ -222,7 +222,7 @@ text = "Back"
 [connection signal="value_changed" from="Panel/VBoxContainer/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/MusicVolume/MusicVolumeSlider" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="Panel/VBoxContainer/SFXVolume/SFXVolumeSlider" to="." method="_on_sfx_volume_value_changed"]
-[connection signal="toggled" from="Panel/VBoxContainer/MuteUnfocused/MuteFocusCheckBox" to="." method="_on_mute_focus_box_toggled"]
+[connection signal="toggled" from="Panel/VBoxContainer/MuteUnfocussed/MuteFocusCheckBox" to="." method="_on_mute_focus_box_toggled"]
 [connection signal="toggled" from="Panel/VBoxContainer/Fullscreen/FullscreenCheckBox" to="." method="_on_fullscreen_box_toggled"]
 [connection signal="value_changed" from="Panel/VBoxContainer/UIScaler/UIScaleSlider" to="." method="_on_ui_scale_value_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/NavigationButtons/ButtonReset" to="." method="_on_button_reset_pressed"]
