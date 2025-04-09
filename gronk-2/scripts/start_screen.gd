@@ -8,7 +8,7 @@ func _on_button_start_pressed() -> void:
 	
 func _on_button_options_pressed() -> void:
 	print("Options pressed")
-	pass
+	get_tree().change_scene_to_file("res://scenes/settings_menu.tscn")
 
 func _on_button_exit_pressed() -> void:
 	print("Exit game pressed")

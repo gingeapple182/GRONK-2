@@ -96,6 +96,7 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_u3esi")
 theme_override_font_sizes/font_size = 32
 text = "GRONK 2: Electric Boogaloo"
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -126,7 +127,6 @@ size_flags_vertical = 3
 theme = ExtResource("6_6idb4")
 theme_override_fonts/font = ExtResource("4_v4t87")
 theme_override_font_sizes/font_size = 16
-disabled = true
 text = "Options"
 
 [node name="ButtonExit" type="Button" parent="VBoxContainer"]
