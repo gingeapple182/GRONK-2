@@ -3,7 +3,7 @@ extends Control
 var pending_master_volume := 100.0
 var pending_music_volume := 100.0
 var pending_sfx_volume := 100.0
-var mute_when_unfocussed := true
+#var mute_when_unfocussed := true
 
 
 # set settings to be accurate
@@ -21,15 +21,9 @@ func _ready() -> void:
 	$Panel/VBoxContainer/MusicVolume/MusicVolumeSlider.value = pending_music_volume
 	$Panel/VBoxContainer/SFXVolume/SFXVolumeSlider.value = pending_sfx_volume
 	
-	$Panel/VBoxContainer/MuteUnfocussed/MuteFocusCheckBox.button_pressed = mute_when_unfocussed
+	$Panel/VBoxContainer/MuteUnfocussed/MuteFocusCheckBox.button_pressed = GameManager.mute_when_unfocussed
 	
 	# display
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_WM_WINDOW_FOCUS_OUT and mute_when_unfocussed:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
-	elif what == NOTIFICATION_WM_WINDOW_FOCUS_IN:
-		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 
 # audio settings
 func _on_master_volume_value_changed(value: float) -> void:
@@ -42,7 +36,7 @@ func _on_sfx_volume_value_changed(value: float) -> void:
 	pending_sfx_volume = value
 
 func _on_mute_focus_box_toggled(toggled_on: bool) -> void:
-	mute_when_unfocussed = toggled_on
+	GameManager.mute_when_unfocussed = toggled_on
 
 # display settings
 func _on_fullscreen_box_toggled(toggled_on: bool) -> void:
