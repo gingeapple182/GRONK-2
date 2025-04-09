@@ -3,9 +3,9 @@ extends Control
 var final_score = 0
 
 func _ready() -> void:
-	var level_intro_score = GameManager.get_level_score(1)
-	var level_one_score = GameManager.get_level_score(2)
-	var level_two_score = GameManager.get_level_score(3)
+	var level_intro_score = GameManager.get_level_score(0)
+	var level_one_score = GameManager.get_level_score(1)
+	var level_two_score = GameManager.get_level_score(2)
 	$ScoreLabel.text = (
 		"Level one coins obtained: " + str(level_one_score) + "\n" + 
 		"Level two coins obtained: " + str(level_two_score) 

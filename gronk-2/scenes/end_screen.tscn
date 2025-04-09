@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5v5b5"]
 [ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_g0py2"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="3_2cwu2"]
-[ext_resource type="Script" path="res://scenes/panel.gd" id="4_1apuy"]
+[ext_resource type="Script" path="res://scripts/panel.gd" id="4_1apuy"]
 [ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="7_527j7"]
 [ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="8_1wsck"]
 
