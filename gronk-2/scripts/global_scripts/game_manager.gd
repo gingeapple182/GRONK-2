@@ -1,6 +1,6 @@
 extends Node
 
-@export var level = 1
+@export var level = 0
 var level_scores = {0: 0, 1: 0, 2: 0}
 @export var playerHealth = 100
 

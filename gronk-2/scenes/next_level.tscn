@@ -46,6 +46,6 @@ region_rect = Rect2(198, 108, 18, 18)
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_flco3")
 autoplay = "default"
-frame_progress = 0.50731
+frame_progress = 0.975851
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

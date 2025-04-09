@@ -6,10 +6,10 @@ func _ready() -> void:
 	var level_intro_score = GameManager.get_level_score(0)
 	var level_one_score = GameManager.get_level_score(1)
 	var level_two_score = GameManager.get_level_score(2)
-	$ScoreLabel.text = (
-		"Level one coins obtained: " + str(level_one_score) + "\n" + 
-		"Level two coins obtained: " + str(level_two_score) 
-	)
+	$ScoreLabel.text = """
+	Level one coins obtained: {0}
+	Level two coins obtained: {1}
+	""".format([level_one_score, level_two_score])
 	
 func set_final_score(score):
 	final_score = score

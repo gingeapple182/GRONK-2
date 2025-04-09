@@ -8,7 +8,11 @@ func _on_body_entered(body: Node2D) -> void:
 		call_deferred("change_scene")
 
 func change_scene():
-	if GameManager.level == 1:
+	if GameManager.level == 0:
+		level_manager.save_score()
+		get_tree().change_scene_to_file("res://scenes/level_one.tscn")
+		GameManager.level = 1
+	elif GameManager.level == 1:
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
 		GameManager.level = 2
