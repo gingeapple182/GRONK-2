@@ -72,7 +72,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xulca")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_27hve")
 layout_mode = 1
 anchors_preset = 15
@@ -81,22 +81,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_c7xes")
-
-[node name="TitleLabel" type="Label" parent="."]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -369.0
-offset_top = 128.0
-offset_right = 379.0
-offset_bottom = 160.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_u3esi")
-theme_override_font_sizes/font_size = 32
-text = "GRONK 2: Electric Boogaloo"
-horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -136,6 +120,36 @@ theme = SubResource("Theme_ccp5a")
 theme_override_fonts/font = ExtResource("4_v4t87")
 theme_override_font_sizes/font_size = 16
 text = "Exit "
+
+[node name="TitleCard" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -418.0
+offset_top = 86.0
+offset_right = 419.0
+offset_bottom = 214.0
+grow_horizontal = 2
+
+[node name="TitleLabel" type="Label" parent="TitleCard"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -374.0
+offset_top = -16.0
+offset_right = 374.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_u3esi")
+theme_override_font_sizes/font_size = 32
+text = "GRONK 2: Electric Boogaloo"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
