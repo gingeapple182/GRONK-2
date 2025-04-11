@@ -10,13 +10,13 @@ func _on_body_entered(body: Node2D) -> void:
 func change_scene():
 	if GameManager.level == 0:
 		level_manager.save_score()
-		get_tree().change_scene_to_file("res://scenes/level_one.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/level_one.tscn")
 		GameManager.level = 1
 	elif GameManager.level == 1:
 		level_manager.save_score()
-		get_tree().change_scene_to_file("res://scenes/level_two.tscn")
+		get_tree().change_scene_to_file("res://scenes/levels/level_two.tscn")
 		GameManager.level = 2
 	elif GameManager.level == 2:
 		level_manager.save_score()
-		get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/menu/end_screen.tscn")
 		GameManager.level = 1

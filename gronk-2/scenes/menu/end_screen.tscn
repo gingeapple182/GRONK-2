@@ -1,21 +1,21 @@
 [gd_scene load_steps=16 format=3 uid="uid://bmt3d2brx0pt7"]
 
-[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="1_ok2nf"]
-[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_xqqx3"]
-[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_5v5b5"]
-[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_g0py2"]
-[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="3_2cwu2"]
-[ext_resource type="Script" path="res://scripts/panel.gd" id="4_1apuy"]
-[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="7_527j7"]
-[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="8_1wsck"]
+[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_oisqy"]
+[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_5sgvb"]
+[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="3_u3bnp"]
+[ext_resource type="Script" path="res://scripts/panel.gd" id="4_7s18e"]
+[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="5_soxc1"]
+[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="6_ujccy"]
+[ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="7_ncpeh"]
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_jutb0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sos85"]
-shader = ExtResource("2_g0py2")
+shader = ExtResource("2_5sgvb")
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/scroll_texture = ExtResource("1_ok2nf")
+shader_parameter/scroll_texture = ExtResource("3_u3bnp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bsmpj"]
-texture = ExtResource("8_1wsck")
+texture = ExtResource("7_ncpeh")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -23,7 +23,7 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(0, 48, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dxygo"]
-texture = ExtResource("8_1wsck")
+texture = ExtResource("7_ncpeh")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -31,7 +31,7 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(24, 24, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ia0a6"]
-texture = ExtResource("8_1wsck")
+texture = ExtResource("7_ncpeh")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -39,7 +39,7 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(48, 24, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktpd0"]
-texture = ExtResource("8_1wsck")
+texture = ExtResource("7_ncpeh")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -47,7 +47,7 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(0, 24, 24, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4xspj"]
-texture = ExtResource("8_1wsck")
+texture = ExtResource("7_ncpeh")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -55,8 +55,8 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(48, 24, 24, 24)
 
 [sub_resource type="Theme" id="Theme_ejf1h"]
-default_font = ExtResource("3_2cwu2")
-Button/fonts/font = ExtResource("3_2cwu2")
+default_font = ExtResource("6_ujccy")
+Button/fonts/font = ExtResource("6_ujccy")
 Button/styles/disabled = SubResource("StyleBoxTexture_bsmpj")
 Button/styles/hover = SubResource("StyleBoxTexture_dxygo")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_ia0a6")
@@ -70,7 +70,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xqqx3")
+script = ExtResource("1_oisqy")
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_sos85")
@@ -80,7 +80,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("4_1apuy")
+script = ExtResource("4_7s18e")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -100,23 +100,23 @@ theme_override_constants/separation = 8
 [node name="ButtonReplay" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("7_527j7")
-theme_override_fonts/font = ExtResource("3_2cwu2")
+theme = ExtResource("5_soxc1")
+theme_override_fonts/font = ExtResource("6_ujccy")
 theme_override_font_sizes/font_size = 16
 text = "Play again"
 
 [node name="ButtonMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("7_527j7")
-theme_override_fonts/font = ExtResource("3_2cwu2")
+theme = ExtResource("5_soxc1")
+theme_override_fonts/font = ExtResource("6_ujccy")
 text = "Back to Start"
 
 [node name="ButtonExit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_ejf1h")
-theme_override_fonts/font = ExtResource("3_2cwu2")
+theme_override_fonts/font = ExtResource("6_ujccy")
 text = "Exit Game
 "
 
@@ -141,7 +141,7 @@ offset_top = 38.0
 offset_right = 239.5
 offset_bottom = 70.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_5v5b5")
+theme_override_fonts/font = ExtResource("8_jutb0")
 theme_override_font_sizes/font_size = 32
 text = "Congratulations!"
 
@@ -155,11 +155,11 @@ offset_top = 114.0
 offset_right = 110.5
 offset_bottom = 137.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_2cwu2")
+theme_override_fonts/font = ExtResource("6_ujccy")
 theme_override_font_sizes/font_size = 16
 text = "Coins collected: 0"
 
 [connection signal="pressed" from="VBoxContainer/ButtonReplay" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonMenu" to="." method="_on_start_menu_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_start_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,17 +1,17 @@
 [gd_scene load_steps=9 format=3 uid="uid://dc72mvnkquq5b"]
 
-[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_6w3rr"]
-[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="1_cbiy1"]
-[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="2_jycaa"]
-[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_d066e"]
-[ext_resource type="Script" path="res://scripts/panel.gd" id="3_lv4nx"]
-[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="5_h0quh"]
-[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="6_b0c2g"]
+[ext_resource type="Script" path="res://scripts/settings_menu.gd" id="1_jxpw4"]
+[ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_h3oey"]
+[ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="3_22ihk"]
+[ext_resource type="Script" path="res://scripts/panel.gd" id="4_s73wj"]
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_twjee"]
+[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="6_563ep"]
+[ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="7_2qbr8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6ikc3"]
-shader = ExtResource("1_cbiy1")
+shader = ExtResource("2_h3oey")
 shader_parameter/offset = Vector2(0, 0)
-shader_parameter/scroll_texture = ExtResource("2_jycaa")
+shader_parameter/scroll_texture = ExtResource("3_22ihk")
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6w3rr")
+script = ExtResource("1_jxpw4")
 
 [node name="Panel" type="Panel" parent="."]
 material = SubResource("ShaderMaterial_6ikc3")
@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_lv4nx")
+script = ExtResource("4_s73wj")
 
 [node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 1
@@ -57,7 +57,7 @@ offset_top = 79.0
 offset_right = 379.0
 offset_bottom = 111.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_d066e")
+theme_override_fonts/font = ExtResource("5_twjee")
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
@@ -75,12 +75,12 @@ offset_right = 324.0
 offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("6_b0c2g")
+theme = ExtResource("6_563ep")
 theme_override_constants/separation = 8
 
 [node name="AudioSettings" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d066e")
+theme_override_fonts/font = ExtResource("5_twjee")
 theme_override_font_sizes/font_size = 16
 text = "Audio"
 horizontal_alignment = 1
@@ -90,7 +90,7 @@ layout_mode = 2
 
 [node name="MasterVolumeLabel" type="Label" parent="Panel/VBoxContainer/MasterVolume"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "Master Volume "
 
@@ -105,7 +105,7 @@ layout_mode = 2
 
 [node name="MusicVolumeLabel" type="Label" parent="Panel/VBoxContainer/MusicVolume"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "Music Volume "
 
@@ -120,7 +120,7 @@ layout_mode = 2
 
 [node name="SFXVolumeLabel" type="Label" parent="Panel/VBoxContainer/SFXVolume"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "SFX Volume"
 
@@ -135,7 +135,7 @@ layout_mode = 2
 
 [node name="MuteUnfocussedLabel" type="Label" parent="Panel/VBoxContainer/MuteUnfocussed"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "Mute when unfocussed"
 
@@ -145,7 +145,7 @@ size_flags_horizontal = 10
 
 [node name="DisplaySettings" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_d066e")
+theme_override_fonts/font = ExtResource("5_twjee")
 theme_override_font_sizes/font_size = 16
 text = "Display"
 horizontal_alignment = 1
@@ -155,7 +155,7 @@ layout_mode = 2
 
 [node name="FullscreenLabel" type="Label" parent="Panel/VBoxContainer/Fullscreen"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "Fullscreen
 "
@@ -169,7 +169,7 @@ layout_mode = 2
 
 [node name="ResolutionLabel" type="Label" parent="Panel/VBoxContainer/Resolution"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "Resolution
 "
@@ -177,7 +177,7 @@ text = "Resolution
 [node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/Resolution"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 
 [node name="UIScaler" type="HBoxContainer" parent="Panel/VBoxContainer"]
@@ -185,7 +185,7 @@ layout_mode = 2
 
 [node name="UIScalerLabel" type="Label" parent="Panel/VBoxContainer/UIScaler"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_h0quh")
+theme_override_fonts/font = ExtResource("7_2qbr8")
 theme_override_font_sizes/font_size = 16
 text = "UI Size
 "
@@ -203,20 +203,20 @@ size_flags_vertical = 10
 [node name="ButtonReset" type="Button" parent="Panel/VBoxContainer/NavigationButtons"]
 layout_mode = 2
 size_flags_horizontal = 2
-theme = ExtResource("6_b0c2g")
+theme = ExtResource("6_563ep")
 text = "Reset
 "
 
 [node name="ButtonApply" type="Button" parent="Panel/VBoxContainer/NavigationButtons"]
 layout_mode = 2
 size_flags_horizontal = 6
-theme = ExtResource("6_b0c2g")
+theme = ExtResource("6_563ep")
 text = "Apply"
 
 [node name="ButtonBack" type="Button" parent="Panel/VBoxContainer/NavigationButtons"]
 layout_mode = 2
 size_flags_horizontal = 10
-theme = ExtResource("6_b0c2g")
+theme = ExtResource("6_563ep")
 text = "Back"
 
 [connection signal="value_changed" from="Panel/VBoxContainer/MasterVolume/MasterVolumeSlider" to="." method="_on_master_volume_value_changed"]

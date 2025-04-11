@@ -16,10 +16,10 @@ func set_final_score(score):
 	
 func _on_replay_button_pressed() -> void:
 	GameManager.reset_scores()
-	get_tree().change_scene_to_file("res://scenes/level_intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level_intro.tscn")
 
 func _on_start_menu_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu/start_screen.tscn")
 
 func _on_button_exit_pressed() -> void:
 	print("Exit game pressed")

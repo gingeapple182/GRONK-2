@@ -63,4 +63,4 @@ func _on_button_apply_pressed() -> void:
 	print("Settings applied ':)'")
 
 func _on_button_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu/start_screen.tscn")
