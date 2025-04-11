@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=3 uid="uid://cvglyr7s14pq1"]
+
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jri0j"]
+[ext_resource type="Texture2D" uid="uid://fvla34jv1n6" path="res://assets/sprites/brackeys/coin.png" id="2_onx7n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jvaq"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wapib"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbdh"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03b2t"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eqo6"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6k3k"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rhdm"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnafm"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5u2s"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8pjf"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcumv"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yr24"]
+atlas = ExtResource("2_onx7n")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nopss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jvaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wapib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_03b2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eqo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6k3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rhdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnafm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5u2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8pjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fcumv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yr24")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ScoreBox" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -174.0
+offset_top = 18.0
+offset_right = -26.0
+offset_bottom = 71.0
+grow_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="ScoreLabel" type="Label" parent="ScoreBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jri0j")
+theme_override_font_sizes/font_size = 52
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="ScoreBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScoreBox/Control"]
+position = Vector2(36, 28)
+scale = Vector2(3.65625, 3.65625)
+sprite_frames = SubResource("SpriteFrames_nopss")
+autoplay = "default"
+frame_progress = 0.2484
+
+[node name="HealthBox" type="HBoxContainer" parent="."]
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 161.0
+offset_bottom = 66.0
+theme_override_constants/separation = 10
+
+[node name="ScoreLabel" type="Label" parent="HealthBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_jri0j")
+theme_override_font_sizes/font_size = 52
+text = "x"
+horizontal_alignment = 1
+vertical_alignment = 1
