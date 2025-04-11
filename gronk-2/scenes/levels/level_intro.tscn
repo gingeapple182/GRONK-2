@@ -502,7 +502,6 @@ sources/1 = SubResource("TileSetAtlasSource_ir6lk")
 size = Vector2(428, 67)
 
 [node name="IntroLevel" type="Node2D"]
-visible = false
 
 [node name="LevelManager" type="Node" parent="."]
 unique_name_in_owner = true

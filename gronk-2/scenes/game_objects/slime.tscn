@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://brxbixbi0o0b3"]
+[gd_scene load_steps=11 format=3 uid="uid://brxbixbi0o0b3"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_450qd"]
 [ext_resource type="Texture2D" uid="uid://cgy2w81kw046m" path="res://assets/sprites/brackeys/slime_green.png" id="1_dhy6d"]
 [ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/game_objects/killzone.tscn" id="2_frkeh"]
+[ext_resource type="PackedScene" uid="uid://cpdxyylwvms82" path="res://scenes/game_objects/killzone_enemy.tscn" id="4_23sic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4tsq"]
 atlas = ExtResource("1_dhy6d")
@@ -52,7 +53,10 @@ autoplay = "default"
 frame_progress = 0.706141
 
 [node name="Killzone" parent="." instance=ExtResource("2_frkeh")]
+visible = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="KillzoneEnemy" parent="." instance=ExtResource("4_23sic")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneEnemy"]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_inomo")
