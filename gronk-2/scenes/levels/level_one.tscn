@@ -1,9 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://dirgipwa365gw"]
+[gd_scene load_steps=25 format=4 uid="uid://dirgipwa365gw"]
 
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_nx2w6"]
 [ext_resource type="PackedScene" uid="uid://0luqwl32q1mv" path="res://scenes/game_objects/player.tscn" id="2_2bfy3"]
-[ext_resource type="Theme" uid="uid://dd0iwrgqetwer" path="res://assets/themes/coin_counter.tres" id="3_kjg37"]
-[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="4_r8vh0"]
 [ext_resource type="PackedScene" uid="uid://cvyfj784mw70k" path="res://scenes/game_objects/next_level.tscn" id="5_1sonw"]
 [ext_resource type="Texture2D" uid="uid://xgj3e41l32bd" path="res://assets/sprites/pixel_platformer/base/tilemap-backgrounds_packed.png" id="6_25rxx"]
 [ext_resource type="Texture2D" uid="uid://crokpsgg70v" path="res://assets/sprites/pixel_platformer/base/tilemap_packed.png" id="7_gjgux"]
@@ -526,21 +524,6 @@ position = Vector2(0, -7)
 zoom = Vector2(3, 3)
 limit_bottom = 100
 position_smoothing_enabled = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="SceneObjects/Player"]
-
-[node name="ScoreLabel" type="Label" parent="SceneObjects/Player/CanvasLayer"]
-visible = false
-offset_left = 15.0
-offset_top = 22.0
-offset_right = 55.0
-offset_bottom = 62.0
-theme = ExtResource("3_kjg37")
-theme_override_fonts/font = ExtResource("4_r8vh0")
-theme_override_font_sizes/font_size = 24
-text = "x"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="NextLevel" parent="SceneObjects" instance=ExtResource("5_1sonw")]
 z_index = 1

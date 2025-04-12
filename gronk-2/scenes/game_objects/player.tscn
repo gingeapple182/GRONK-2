@@ -1,9 +1,25 @@
-[gd_scene load_steps=31 format=3 uid="uid://0luqwl32q1mv"]
+[gd_scene load_steps=35 format=3 uid="uid://0luqwl32q1mv"]
 
 [ext_resource type="Texture2D" uid="uid://uv4ol6jgljb5" path="res://assets/sprites/brackeys/knight.png" id="1_fvshb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oy1gx"]
 [ext_resource type="AudioStream" uid="uid://blt115htm3sly" path="res://assets/sounds/jump.wav" id="3_03oqu"]
 [ext_resource type="AudioStream" uid="uid://dhti1dibwn3j" path="res://assets/sounds/hurt.wav" id="4_snjbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rr32"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2bf0"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_regxs"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8esm"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(0, 192, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1uus"]
 atlas = ExtResource("1_fvshb")
@@ -105,6 +121,23 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8rr32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2bf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_regxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8esm")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_w1uus")
 }, {
 "duration": 1.0,
@@ -203,7 +236,6 @@ position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_5gijo")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.689015
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -218,7 +250,7 @@ one_shot = true
 stream = ExtResource("3_03oqu")
 bus = &"SFX"
 
-[node name="Die" type="AudioStreamPlayer2D" parent="Audio"]
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("4_snjbg")
 bus = &"SFX"
 
