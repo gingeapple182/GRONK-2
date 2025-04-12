@@ -6,10 +6,12 @@ extends CharacterBody2D
 @onready var jump: AudioStreamPlayer2D = $Audio/Jump
 @onready var die: AudioStreamPlayer2D = $Audio/Die
 @onready var timer: Timer = $Timer
+@onready var ui = $"../../UI"
+
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
-var max_health := 100
+var max_health := 100.0
 var current_health := max_health
 
 # health stuff
@@ -19,8 +21,9 @@ func take_damage(amount: int = 1) -> void:
 	die.play() # play sound
 	velocity.y = JUMP_VELOCITY / 1.5 # bounce player on hit
 	print("Player got hit! Current health: ", current_health)
+	ui.update_health(current_health)
 	
-	if current_health <= 0:
+	if current_health <= 0.0:
 		player_killed()
 
 func player_killed():

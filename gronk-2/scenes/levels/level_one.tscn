@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dirgipwa365gw"]
+[gd_scene load_steps=27 format=4 uid="uid://dirgipwa365gw"]
 
 [ext_resource type="Script" path="res://scripts/level_one_manager.gd" id="1_k5yhu"]
 [ext_resource type="PackedScene" uid="uid://0luqwl32q1mv" path="res://scenes/game_objects/player.tscn" id="2_2bfy3"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/slime_purple.tscn" id="17_7pts8"]
 [ext_resource type="PackedScene" uid="uid://brxbixbi0o0b3" path="res://scenes/game_objects/slime.tscn" id="18_4p5wd"]
 [ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/game_objects/killzone.tscn" id="19_jkvi8"]
+[ext_resource type="PackedScene" uid="uid://cvglyr7s14pq1" path="res://scenes/ui.tscn" id="20_hdrrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_id0tx"]
 texture = ExtResource("6_25rxx")
@@ -755,3 +756,5 @@ shape = SubResource("WorldBoundaryShape2D_of56l")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Killzones/Killzone"]
 position = Vector2(529, 5)
 polygon = PackedVector2Array(-60, -71, 8, -71, 191, -35, 244, -35, 587, -124, 698, -125, 700, -4, -62, -5)
+
+[node name="UI" parent="." instance=ExtResource("20_hdrrn")]

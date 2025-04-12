@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bxp3i3eyuo71p"]
+[gd_scene load_steps=32 format=4 uid="uid://bxp3i3eyuo71p"]
 
 [ext_resource type="Script" path="res://scripts/level_two_manager.gd" id="1_srtvo"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="2_c1esk"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/slime_purple.tscn" id="14_fcepy"]
 [ext_resource type="PackedScene" uid="uid://brxbixbi0o0b3" path="res://scenes/game_objects/slime.tscn" id="15_h1c4g"]
 [ext_resource type="PackedScene" uid="uid://cvyfj784mw70k" path="res://scenes/game_objects/next_level.tscn" id="16_futru"]
+[ext_resource type="PackedScene" uid="uid://cvglyr7s14pq1" path="res://scenes/ui.tscn" id="17_i3gd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jae4d"]
 texture = ExtResource("6_mfgim")
@@ -1170,3 +1171,5 @@ position = Vector2(2083, 24)
 [node name="NextLevel" parent="." instance=ExtResource("16_futru")]
 z_index = 1
 position = Vector2(2955, -216)
+
+[node name="UI" parent="." instance=ExtResource("17_i3gd8")]

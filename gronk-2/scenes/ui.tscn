@@ -1,8 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://cvglyr7s14pq1"]
+[gd_scene load_steps=19 format=3 uid="uid://cvglyr7s14pq1"]
 
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_l5ejw"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jri0j"]
 [ext_resource type="Texture2D" uid="uid://fvla34jv1n6" path="res://assets/sprites/brackeys/coin.png" id="2_onx7n"]
-[ext_resource type="PackedScene" uid="uid://dsm4vv8hoivma" path="res://scenes/menu/health_ui.tscn" id="3_r163e"]
+[ext_resource type="Script" path="res://scripts/health_ui.gd" id="3_3k750"]
+[ext_resource type="Texture2D" uid="uid://dktjb7ra4ij73" path="res://assets/sprites/heart_full.png" id="4_vv6ey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jvaq"]
 atlas = ExtResource("2_onx7n")
@@ -97,8 +99,9 @@ animations = [{
 }]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_l5ejw")
 
-[node name="ScoreBox" type="HBoxContainer" parent="."]
+[node name="ScoreUI" type="HBoxContainer" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -109,7 +112,7 @@ offset_bottom = 71.0
 grow_horizontal = 0
 theme_override_constants/separation = 10
 
-[node name="ScoreLabel" type="Label" parent="ScoreBox"]
+[node name="ScoreLabel" type="Label" parent="ScoreUI"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -118,19 +121,51 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("2_jri0j")
 theme_override_font_sizes/font_size = 52
-text = "x"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="ScoreBox"]
+[node name="Control" type="Control" parent="ScoreUI"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScoreBox/Control"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ScoreUI/Control"]
 position = Vector2(36, 28)
 scale = Vector2(3.65625, 3.65625)
 sprite_frames = SubResource("SpriteFrames_nopss")
 autoplay = "default"
 frame_progress = 0.2484
 
-[node name="HealthUI" parent="." instance=ExtResource("3_r163e")]
+[node name="HealthUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_3k750")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HealthUI"]
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 326.0
+offset_bottom = 87.0
+theme_override_constants/separation = 8
+
+[node name="Heart 1" type="TextureRect" parent="HealthUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_vv6ey")
+expand_mode = 2
+
+[node name="Heart 2" type="TextureRect" parent="HealthUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_vv6ey")
+expand_mode = 2
+
+[node name="Heart 3" type="TextureRect" parent="HealthUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_vv6ey")
+expand_mode = 2
+
+[node name="Heart 4" type="TextureRect" parent="HealthUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_vv6ey")
+expand_mode = 2
