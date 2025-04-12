@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvglyr7s14pq1"]
+[gd_scene load_steps=17 format=3 uid="uid://cvglyr7s14pq1"]
 
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jri0j"]
 [ext_resource type="Texture2D" uid="uid://fvla34jv1n6" path="res://assets/sprites/brackeys/coin.png" id="2_onx7n"]
+[ext_resource type="PackedScene" uid="uid://dsm4vv8hoivma" path="res://scenes/menu/health_ui.tscn" id="3_r163e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jvaq"]
 atlas = ExtResource("2_onx7n")
@@ -132,22 +133,4 @@ sprite_frames = SubResource("SpriteFrames_nopss")
 autoplay = "default"
 frame_progress = 0.2484
 
-[node name="HealthBox" type="HBoxContainer" parent="."]
-offset_left = 13.0
-offset_top = 13.0
-offset_right = 161.0
-offset_bottom = 66.0
-theme_override_constants/separation = 10
-
-[node name="ScoreLabel" type="Label" parent="HealthBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_jri0j")
-theme_override_font_sizes/font_size = 52
-text = "x"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="HealthUI" parent="." instance=ExtResource("3_r163e")]
