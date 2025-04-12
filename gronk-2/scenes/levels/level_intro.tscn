@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://ce3qkp3sdqij"]
 
-[ext_resource type="Script" path="res://scripts/level_intro_manager.gd" id="1_xej5a"]
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_6mci6"]
 [ext_resource type="PackedScene" uid="uid://0luqwl32q1mv" path="res://scenes/game_objects/player.tscn" id="2_kimer"]
 [ext_resource type="PackedScene" uid="uid://cvyfj784mw70k" path="res://scenes/game_objects/next_level.tscn" id="5_ja6qt"]
 [ext_resource type="Texture2D" uid="uid://xgj3e41l32bd" path="res://assets/sprites/pixel_platformer/base/tilemap-backgrounds_packed.png" id="6_4nhvd"]
@@ -505,12 +505,7 @@ size = Vector2(428, 67)
 
 [node name="LevelManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_xej5a")
-
-[node name="ScoreLabel" type="Label" parent="LevelManager"]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
+script = ExtResource("1_6mci6")
 
 [node name="SceneObjects" type="Node" parent="."]
 
