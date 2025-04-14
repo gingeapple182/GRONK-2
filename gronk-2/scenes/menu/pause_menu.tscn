@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://0l5j784cy2ed"]
+
+[ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_lpggp"]
+[ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="2_apo7d"]
+[ext_resource type="Theme" uid="uid://cq02tnv7hmeff" path="res://assets/themes/angry_button.tres" id="3_x5pc8"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -212.0
+offset_top = -164.5
+offset_right = 212.0
+offset_bottom = 164.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -211.5
+offset_top = 28.0
+offset_right = 212.5
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_lpggp")
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -65.0
+offset_right = 123.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="ButtonResume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("2_apo7d")
+text = "Resume"
+
+[node name="ButtonOptions" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("2_apo7d")
+text = "Options
+"
+
+[node name="ButtonExit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 7
+theme = ExtResource("3_x5pc8")
+text = "Exit game"
