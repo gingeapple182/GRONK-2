@@ -713,7 +713,7 @@ position = Vector2(819, -299)
 [node name="Enemies" type="Node" parent="SceneObjects"]
 
 [node name="SlimePurple" parent="SceneObjects/Enemies" instance=ExtResource("17_7pts8")]
-position = Vector2(371, -30)
+position = Vector2(372, -27)
 
 [node name="Slime" parent="SceneObjects/Enemies" instance=ExtResource("18_4p5wd")]
 z_index = 1
