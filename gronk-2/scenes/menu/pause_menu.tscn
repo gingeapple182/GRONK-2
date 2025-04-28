@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://0l5j784cy2ed"]
+[gd_scene load_steps=5 format=3 uid="uid://0l5j784cy2ed"]
 
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_inj1b"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_lpggp"]
 [ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="2_apo7d"]
 [ext_resource type="Theme" uid="uid://cq02tnv7hmeff" path="res://assets/themes/angry_button.tres" id="3_x5pc8"]
 
 [node name="PauseMenu" type="Control"]
+auto_translate_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_inj1b")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -76,3 +79,7 @@ layout_mode = 2
 size_flags_vertical = 7
 theme = ExtResource("3_x5pc8")
 text = "Exit game"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

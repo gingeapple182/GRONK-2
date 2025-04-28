@@ -717,7 +717,7 @@ position = Vector2(372, -27)
 
 [node name="Slime" parent="SceneObjects/Enemies" instance=ExtResource("18_4p5wd")]
 z_index = 1
-position = Vector2(-191, 61)
+position = Vector2(-190, 63)
 
 [node name="Slime2" parent="SceneObjects/Enemies" instance=ExtResource("18_4p5wd")]
 z_index = 1
