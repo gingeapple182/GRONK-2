@@ -12,11 +12,14 @@ func change_scene():
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/levels/level_one.tscn")
 		GameManager.level = 1
+		GameManager.gameLocation = 1
 	elif GameManager.level == 1:
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/levels/level_two.tscn")
 		GameManager.level = 2
+		GameManager.gameLocation = 2
 	elif GameManager.level == 2:
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/menu/end_screen.tscn")
-		GameManager.level = 1
+		GameManager.level = 3
+		GameManager.gameLocation = 3

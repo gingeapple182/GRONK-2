@@ -1107,43 +1107,43 @@ position = Vector2(423, -16)
 [node name="Enemies" type="Node" parent="SceneObjects"]
 
 [node name="SlimePurple" parent="SceneObjects/Enemies" instance=ExtResource("14_fcepy")]
-position = Vector2(424, 78)
+position = Vector2(424, 81)
 
 [node name="SlimePurple2" parent="SceneObjects/Enemies" instance=ExtResource("14_fcepy")]
-position = Vector2(1050, -48)
+position = Vector2(1049, -45)
 
 [node name="SlimePurple3" parent="SceneObjects/Enemies" instance=ExtResource("14_fcepy")]
-position = Vector2(1346, -47)
+position = Vector2(1346, -45)
 
 [node name="SlimePurple4" parent="SceneObjects/Enemies" instance=ExtResource("14_fcepy")]
-position = Vector2(1561, -29)
+position = Vector2(1563, -27)
 
 [node name="Slime" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(568, -11)
+position = Vector2(568, -9)
 
 [node name="Slime6" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(321, 24)
+position = Vector2(322, 27)
 
 [node name="Slime2" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(812, -83)
+position = Vector2(812, -81)
 
 [node name="Slime3" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(373, -48)
+position = Vector2(373, -45)
 
 [node name="Slime4" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(1236, -47)
+position = Vector2(1237, -45)
 
 [node name="Slime5" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(3132, -30)
+position = Vector2(3130, -27)
 
 [node name="Slime8" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
-position = Vector2(3189, 27)
+position = Vector2(3188, 30)
 
 [node name="Slime7" parent="SceneObjects/Enemies" instance=ExtResource("15_h1c4g")]
 position = Vector2(2529, 45)
 
 [node name="SlimePurple5" parent="SceneObjects/Enemies" instance=ExtResource("14_fcepy")]
-position = Vector2(2083, 24)
+position = Vector2(2082, 27)
 
 [node name="NextLevel" parent="SceneObjects" instance=ExtResource("16_futru")]
 z_index = 1

@@ -161,5 +161,4 @@ text = "Coins collected: 0"
 
 [connection signal="pressed" from="VBoxContainer/ButtonReplay" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonMenu" to="." method="_on_start_menu_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_start_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

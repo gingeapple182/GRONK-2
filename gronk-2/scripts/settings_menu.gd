@@ -63,4 +63,11 @@ func _on_button_apply_pressed() -> void:
 	print("Settings applied ':)'")
 
 func _on_button_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu/start_screen.tscn")
+	if GameManager.gameLevel == 0:
+		get_tree().change_scene_to_file("res://scenes/menu/start_screen.tscn")
+	elif GameManager.gameLevel == 1:
+		get_tree().change_scene_to_file("res://scenes/levels/level_intro.tscn")
+	elif GameManager.gameLevel == 2:
+		get_tree().change_scene_to_file("res://scenes/levels/level_one.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/levels/level_two.tscn")

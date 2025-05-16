@@ -9,7 +9,8 @@ func _ready() -> void:
 	$TitleCard/ScoreLabel.text = """
 	Level one coins obtained: {0}
 	Level two coins obtained: {1}
-	""".format([level_one_score, level_two_score])
+	Level three coins obtained: {2}
+	""".format([level_intro_score, level_one_score, level_two_score])
 	
 func set_final_score(score):
 	final_score = score
