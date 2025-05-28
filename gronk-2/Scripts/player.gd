@@ -42,6 +42,10 @@ func _on_timer_timeout() -> void:
 	Engine.time_scale = 1
 	get_tree().reload_current_scene()
 
+func get_feet_y() -> float:
+	var shape = $CollisionShape2D.shape as CircleShape2D
+	return $CollisionShape2D.global_position.y + shape.radius
+
 # movement stuff
 func _physics_process(delta: float) -> void:
 	# Decrease hurt time
