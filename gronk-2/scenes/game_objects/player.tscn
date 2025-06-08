@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://0luqwl32q1mv"]
+[gd_scene load_steps=36 format=3 uid="uid://0luqwl32q1mv"]
 
 [ext_resource type="Texture2D" uid="uid://uv4ol6jgljb5" path="res://assets/sprites/brackeys/knight.png" id="1_fvshb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oy1gx"]
@@ -227,6 +227,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hikgd"]
 radius = 6.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ou4xd"]
+size = Vector2(8, 2)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_oy1gx")
@@ -256,4 +259,14 @@ bus = &"SFX"
 stream = ExtResource("4_snjbg")
 bus = &"SFX"
 
+[node name="StompArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ou4xd")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="StompArea" to="." method="_on_stomp_area_area_entered"]
+[connection signal="body_entered" from="StompArea" to="." method="_on_stomp_area_body_entered"]

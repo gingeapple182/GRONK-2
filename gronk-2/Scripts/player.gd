@@ -82,3 +82,19 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+#func _on_stomp_area_body_entered(body):
+	#print("StompArea body entered:", body)
+	#if body.is_in_group("enemy"):
+		#if body.has_method("on_stomped"):
+			#body.on_stomped()
+		#velocity.y = -200
+
+
+func _on_stomp_area_area_entered(area):
+	print("StompArea area entered:", area)
+	if area.is_in_group("enemy"):
+		if area.has_method("on_stomped"):
+			area.on_stomped()
+		velocity.y = -200

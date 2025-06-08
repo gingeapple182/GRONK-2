@@ -25,6 +25,11 @@ GameManager="*res://scripts/global_scripts/game_manager.gd"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+player=""
+enemy=""
+
 [input]
 
 jump={

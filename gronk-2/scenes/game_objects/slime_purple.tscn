@@ -128,7 +128,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rei6"]
 size = Vector2(13, 12)
 
-[node name="SlimePurple" type="Node2D"]
+[node name="SlimePurple" type="Node2D" groups=["enemy"]]
 z_index = 2
 script = ExtResource("1_exeuc")
 
@@ -145,7 +145,8 @@ target_position = Vector2(8, 0)
 position = Vector2(0, 5)
 target_position = Vector2(-8, 0)
 
-[node name="KillzoneEnemy" parent="." instance=ExtResource("3_a1t3t")]
+[node name="KillzoneEnemy" parent="." groups=["enemy"] instance=ExtResource("3_a1t3t")]
+collision_layer = 3
 damage = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneEnemy"]
