@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var timer: Timer = $Timer
 @onready var die: AudioStreamPlayer2D = $Die
-@export var damage: float = 0.0
+@export var damage: float = 25.0
 @export var jump_kill := true
 @export var damage_throw := 200
 

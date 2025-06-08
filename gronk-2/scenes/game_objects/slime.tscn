@@ -76,7 +76,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_inomo"]
 size = Vector2(16, 16)
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="Node2D" groups=["enemy"]]
 script = ExtResource("1_450qd")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -85,7 +85,6 @@ autoplay = "default"
 frame_progress = 0.237677
 
 [node name="KillzoneEnemy" parent="." instance=ExtResource("4_23sic")]
-damage = 25.0
 jump_kill = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillzoneEnemy"]
