@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bhfxckgslasbr" path="res://scenes/game_objects/big_cloud_right.tscn" id="14_ge2sw"]
 [ext_resource type="PackedScene" uid="uid://225kqmjy1i60" path="res://scenes/game_objects/big_cloud_middle.tscn" id="15_l6csk"]
 [ext_resource type="PackedScene" uid="uid://dcx6pldr2kyje" path="res://scenes/game_objects/big_cloud_left.tscn" id="16_m8qla"]
-[ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/slime_purple.tscn" id="17_7pts8"]
+[ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/dino_red.tscn" id="17_7pts8"]
 [ext_resource type="PackedScene" uid="uid://brxbixbi0o0b3" path="res://scenes/game_objects/slime.tscn" id="18_4p5wd"]
 [ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/game_objects/killzone.tscn" id="19_jkvi8"]
 [ext_resource type="PackedScene" uid="uid://cvglyr7s14pq1" path="res://scenes/ui.tscn" id="20_hdrrn"]

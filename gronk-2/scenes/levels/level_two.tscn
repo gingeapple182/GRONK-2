@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dpjewfdqf20y2" path="res://scenes/game_objects/floating_platform_1.tscn" id="11_ornxh"]
 [ext_resource type="PackedScene" uid="uid://dqy634e5rbhc3" path="res://scenes/game_objects/killzone.tscn" id="12_ueerd"]
 [ext_resource type="PackedScene" uid="uid://cxl68ms0omj40" path="res://scenes/game_objects/coin.tscn" id="13_iblgx"]
-[ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/slime_purple.tscn" id="14_fcepy"]
+[ext_resource type="PackedScene" uid="uid://uu7qljsq8bjv" path="res://scenes/game_objects/dino_red.tscn" id="14_fcepy"]
 [ext_resource type="PackedScene" uid="uid://brxbixbi0o0b3" path="res://scenes/game_objects/slime.tscn" id="15_h1c4g"]
 [ext_resource type="PackedScene" uid="uid://cvyfj784mw70k" path="res://scenes/game_objects/next_level.tscn" id="16_futru"]
 [ext_resource type="PackedScene" uid="uid://cvglyr7s14pq1" path="res://scenes/ui.tscn" id="17_i3gd8"]
