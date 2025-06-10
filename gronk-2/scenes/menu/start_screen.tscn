@@ -153,7 +153,7 @@ text = "GRONK 2
 horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/ButtonStart" to="." method="_on_button_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonOptions" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonExit" to="." method="_on_play_button_pressed"]
