@@ -10,6 +10,7 @@ var level_scores = {0: 0, 1: 0, 2: 0}
 @export var playerHealth = 100
 # 0 = start : 1 = lvl 1 pause : 2 = lvl 2 pause : 3 = lvl 3 pause
 @export var gameLocation = 0
+@export var max_jumps = 1
 
 func _ready():
 	pass

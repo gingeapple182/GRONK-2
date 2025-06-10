@@ -1,9 +1,17 @@
-[gd_scene load_steps=36 format=3 uid="uid://0luqwl32q1mv"]
+[gd_scene load_steps=38 format=3 uid="uid://0luqwl32q1mv"]
 
 [ext_resource type="Texture2D" uid="uid://uv4ol6jgljb5" path="res://assets/sprites/brackeys/knight.png" id="1_fvshb"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oy1gx"]
 [ext_resource type="AudioStream" uid="uid://blt115htm3sly" path="res://assets/sounds/jump.wav" id="3_03oqu"]
 [ext_resource type="AudioStream" uid="uid://dhti1dibwn3j" path="res://assets/sounds/hurt.wav" id="4_snjbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yu8k"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpmu"]
+atlas = ExtResource("1_fvshb")
+region = Rect2(96, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rr32"]
 atlas = ExtResource("1_fvshb")
@@ -119,6 +127,41 @@ region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5gijo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yu8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yu8k")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8rr32")
@@ -237,10 +280,8 @@ script = ExtResource("1_oy1gx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_5gijo")
-animation = &"hurt"
+animation = &"dash"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -269,4 +310,3 @@ shape = SubResource("RectangleShape2D_ou4xd")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="StompArea" to="." method="_on_stomp_area_area_entered"]
-[connection signal="body_entered" from="StompArea" to="." method="_on_stomp_area_body_entered"]

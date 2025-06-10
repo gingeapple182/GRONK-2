@@ -24,6 +24,9 @@ const HURT_DURATION := 0.5
 const FLASH_INTERVAL := 0.1
 const COYOTE_TIME := 0.15
 const JUMP_BUFFER_TIME := 0.15
+const DASH_SPEED := 350.0
+const DASH_TIME := 0.18
+const DASH_COOLDOWN := 0.4
 
 var max_health := 100.0
 var current_health := max_health
@@ -31,10 +34,15 @@ var hurt_time := 0.0
 var flash_timer := 0.0
 var coyote_timer := 0.0
 var jump_buffer_timer := 0.0
+var dash_timer := 0.0
+var dash_cooldown := 0.0
+var dash_direction := 1
+var dash_in_air := false
 var facing_left := false
+var jumps_remaining : int = GameManager.max_jumps
 
 # State machine setup
-enum PlayerState { IDLE, RUN, JUMP, FALL, HURT, DEAD }
+enum PlayerState { IDLE, RUN, JUMP, FALL, HURT, DEAD, DASH }
 var state = PlayerState.IDLE
 
 func _ready() -> void:
@@ -43,7 +51,8 @@ func _ready() -> void:
 func handle_input():
 	var direction = Input.get_axis("move_left", "move_right")
 	var jump_pressed = Input.is_action_just_pressed("jump")
-	return [direction, jump_pressed]
+	var dash_pressed = Input.is_action_just_pressed("dash")
+	return [direction, jump_pressed, dash_pressed]
 
 # --- STATE MACHINE ---
 
@@ -59,17 +68,23 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.visible = true
 
-	# Apply gravity
-	if not is_on_floor():
+	# Dash cooldown timer
+	if dash_cooldown > 0.0:
+		dash_cooldown -= delta
+
+	# Apply gravity (not during dash)
+	if not is_on_floor() and state != PlayerState.DASH:
 		velocity += get_gravity() * delta
 
 	var input = handle_input()
 	var direction = input[0]
 	var jump_pressed = input[1]
+	var dash_pressed = input[2]
 
 	# Update coyote timer
 	if is_on_floor():
 		coyote_timer = COYOTE_TIME
+		jumps_remaining = GameManager.max_jumps
 	else:
 		coyote_timer -= delta
 
@@ -81,36 +96,41 @@ func _physics_process(delta: float) -> void:
 
 	match state:
 		PlayerState.IDLE:
-			state_idle(direction, jump_pressed)
+			state_idle(direction, dash_pressed)
 		PlayerState.RUN:
-			state_run(direction, jump_pressed)
+			state_run(direction, dash_pressed)
 		PlayerState.JUMP:
-			state_jump(direction)
+			state_jump(direction, dash_pressed)
 		PlayerState.FALL:
-			state_fall(direction)
+			state_fall(direction, dash_pressed)
 		PlayerState.HURT:
 			state_hurt()
 		PlayerState.DEAD:
 			state_dead()
+		PlayerState.DASH:
+			state_dash(jump_pressed)
 
 	move_and_slide()
 
 # --- STATE LOGIC FUNCTIONS ---
 
-func state_idle(direction, jump_pressed):
+func state_idle(direction, dash_pressed):
 	if jump_buffer_timer > 0.0 and coyote_timer > 0.0:
 		velocity.y = JUMP_VELOCITY
 		jump.play()
 		emit_signal("jumped")
 		set_state(PlayerState.JUMP)
 		jump_buffer_timer = 0.0
+		jumps_remaining -= 1
+	elif dash_pressed and dash_cooldown <= 0.0:
+		start_dash()
 	elif direction != 0:
 		set_state(PlayerState.RUN)
 	velocity.x = move_toward(velocity.x, 0, SPEED)
 	# Always face the last direction moved
 	animated_sprite.flip_h = facing_left
 
-func state_run(direction, jump_pressed):
+func state_run(direction, dash_pressed):
 	velocity.x = direction * SPEED
 	if direction != 0:
 		facing_left = direction < 0
@@ -123,18 +143,52 @@ func state_run(direction, jump_pressed):
 		emit_signal("jumped")
 		set_state(PlayerState.JUMP)
 		jump_buffer_timer = 0.0
+		jumps_remaining -= 1
+	elif dash_pressed and dash_cooldown <= 0.0:
+		start_dash()
 
-func state_jump(direction):
+func state_jump(direction, dash_pressed):
 	velocity.x = direction * SPEED
 	animated_sprite.flip_h = direction < 0
+	if jump_buffer_timer > 0.0 and jumps_remaining > 0:
+		velocity.y = JUMP_VELOCITY
+		jump.play()
+		emit_signal("jumped")
+		jump_buffer_timer = 0.0
+		jumps_remaining -= 1
+	elif dash_pressed and dash_cooldown <= 0.0:
+		start_dash()
 	if velocity.y > 0:
 		set_state(PlayerState.FALL)
 
-func state_fall(direction):
+func state_fall(direction, dash_pressed):
 	velocity.x = direction * SPEED
 	animated_sprite.flip_h = direction < 0
+	if jump_buffer_timer > 0.0 and jumps_remaining > 0:
+		velocity.y = JUMP_VELOCITY
+		jump.play()
+		emit_signal("jumped")
+		jump_buffer_timer = 0.0
+		jumps_remaining -= 1
+	elif dash_pressed and dash_cooldown <= 0.0:
+		start_dash()
 	if is_on_floor():
 		set_state(PlayerState.IDLE)
+
+func state_dash(jump_pressed):
+	# Lock direction and ignore input
+	velocity.x = dash_direction * DASH_SPEED
+	velocity.y = 0 if not dash_in_air else velocity.y
+	dash_timer -= get_process_delta_time()
+	if jump_pressed:
+		set_state(PlayerState.JUMP)
+		return
+	if dash_timer <= 0.0:
+		dash_cooldown = DASH_COOLDOWN
+		if is_on_floor():
+			set_state(PlayerState.IDLE)
+		else:
+			set_state(PlayerState.FALL)
 
 func state_hurt():
 	if hurt_time <= 0:
@@ -145,6 +199,14 @@ func state_hurt():
 
 func state_dead():
 	velocity = Vector2.ZERO
+
+# --- DASH HELPER ---
+
+func start_dash():
+	dash_direction = -1 if facing_left else 1
+	dash_in_air = not is_on_floor()
+	dash_timer = DASH_TIME
+	set_state(PlayerState.DASH)
 
 # --- STATE TRANSITION & ANIMATION ---
 
@@ -168,6 +230,8 @@ func enter_state(new_state):
 			hurtSound.play()
 		PlayerState.DEAD:
 			animated_sprite.play("hurt")
+		PlayerState.DASH:
+			animated_sprite.play("dash")
 
 # --- CUSTOM FUNCTIONS ---
 

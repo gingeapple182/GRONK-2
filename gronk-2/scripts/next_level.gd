@@ -13,11 +13,15 @@ func change_scene():
 		get_tree().change_scene_to_file("res://scenes/levels/level_one.tscn")
 		GameManager.level = 1
 		GameManager.gameLocation = 1
+		# Restrict to single jump
+		GameManager.max_jumps = 1
 	elif GameManager.level == 1:
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/levels/level_two.tscn")
 		GameManager.level = 2
 		GameManager.gameLocation = 2
+		# Allow double jump
+		GameManager.max_jumps = 2
 	elif GameManager.level == 2:
 		level_manager.save_score()
 		get_tree().change_scene_to_file("res://scenes/menu/end_screen.tscn")
