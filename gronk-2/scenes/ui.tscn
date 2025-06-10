@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://cvglyr7s14pq1"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_l5ejw"]
+[ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_l5ejw"]
 [ext_resource type="FontFile" uid="uid://bya20bd0ol5c1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_jri0j"]
 [ext_resource type="Texture2D" uid="uid://fvla34jv1n6" path="res://assets/sprites/brackeys/coin.png" id="2_onx7n"]
-[ext_resource type="Script" path="res://scripts/health_ui.gd" id="3_3k750"]
+[ext_resource type="Script" path="res://scripts/ui/health_ui.gd" id="3_3k750"]
 [ext_resource type="Texture2D" uid="uid://dktjb7ra4ij73" path="res://assets/sprites/heart_full.png" id="4_vv6ey"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7jvaq"]

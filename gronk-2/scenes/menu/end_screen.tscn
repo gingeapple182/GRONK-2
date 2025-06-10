@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://bmt3d2brx0pt7"]
 
-[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_oisqy"]
+[ext_resource type="Script" path="res://scripts/ui/end_screen.gd" id="1_oisqy"]
 [ext_resource type="Shader" path="res://assets/shader/start_screen.gdshader" id="2_5sgvb"]
 [ext_resource type="Texture2D" uid="uid://w0rqp86whhnx" path="res://assets/sprites/back.png" id="3_u3bnp"]
-[ext_resource type="Script" path="res://scripts/panel.gd" id="4_7s18e"]
+[ext_resource type="Script" path="res://scripts/ui/panel.gd" id="4_7s18e"]
 [ext_resource type="Theme" uid="uid://cnnrcqluok6ds" path="res://assets/themes/basic_button.tres" id="5_soxc1"]
 [ext_resource type="FontFile" uid="uid://lrf64dpg6qa5" path="res://assets/fonts/PixelOperator8.ttf" id="6_ujccy"]
 [ext_resource type="Texture2D" uid="uid://ba0x3d3x057qk" path="res://assets/sprites/ginge/GRONK2 UI.png" id="7_ncpeh"]

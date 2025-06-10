@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsm4vv8hoivma"]
 
-[ext_resource type="Script" path="res://scripts/health_ui.gd" id="1_8qt57"]
+[ext_resource type="Script" path="res://scripts/ui/health_ui.gd" id="1_8qt57"]
 [ext_resource type="Texture2D" uid="uid://dktjb7ra4ij73" path="res://assets/sprites/heart_full.png" id="2_woctb"]
 
 [node name="HealthUI" type="Control"]

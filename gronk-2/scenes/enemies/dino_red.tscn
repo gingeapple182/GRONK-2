@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://uu7qljsq8bjv"]
 
-[ext_resource type="Script" path="res://scripts/dino_red.gd" id="1_exeuc"]
+[ext_resource type="Script" path="res://scripts/enemies/dino_red.gd" id="1_exeuc"]
 [ext_resource type="Texture2D" uid="uid://bydmymmfknxma" path="res://assets/sprites/DinoSprites - mort.png" id="2_ws0p1"]
 [ext_resource type="PackedScene" uid="uid://cpdxyylwvms82" path="res://scenes/game_objects/killzone_enemy.tscn" id="3_a1t3t"]
 
