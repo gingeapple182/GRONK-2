@@ -110,3 +110,4 @@ The goal is to collect all the coins and reach the end without dying. While the 
 ## Supporting materials
 
 Using pixel art sprite sheets for levels from [Kenney](https://kenney.nl)
+

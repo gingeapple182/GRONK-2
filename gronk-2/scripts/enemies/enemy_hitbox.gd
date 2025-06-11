@@ -28,11 +28,18 @@ func _on_body_entered(body: Node2D) -> void:
 		body.take_damage(damage)
 
 # Call this when the player stomps the enemy
-func on_stomped():
+func on_stomped(player):
 	is_dead = true
 	if $CollisionShape2D:
-		$CollisionShape2D.disabled = true
+		$CollisionShape2D.call_deferred("set_disabled", true)
+	if die:
+		die.play()
+		await get_tree().create_timer(die.stream.get_length()).timeout
+		print("Enemy died")
+		parent.queue_free()  # Remove the enemy from the scene
+	else:
+		print("No die sound to play")
 	if parent.has_method("died") and jump_kill:
 		parent.died()
 	else:
-		print("Enemy doesnt die")
+		print("Enemy doesn't die")

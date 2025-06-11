@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Music="*res://scenes/game_objects/music.tscn"
 GameManager="*res://scripts/global_scripts/game_manager.gd"
+AudioManager="*res://autoload/AudioManager.gd"
+Global="*res://autoload/Global.gd"
+SceneChanger="*res://autoload/SceneChanger.gd"
+SignalBus="*res://autoload/SignalBus.gd"
+Util="*res://autoload/Util.gd"
 
 [display]
 
